@@ -32,9 +32,10 @@
 </div>
 
 
+
   
 
-<%= form_for(resource, as: resource_name, url: "/users", method: :post) do |f| %>
+<%= form_for(@user, url: registration_path(resource_name), mehod: :post) do |f| %>
 <%# 一旦残しておきます %>
   <%# <%= render "devise/shared/error_messages", resource: resource %> 
 
@@ -66,7 +67,16 @@
 
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
 <% unless session["devise.sns_id"].present? %>
+=======
+<% if session["devise.sns_id"] %>
+>>>>>>> parent of fbc5bc0... SNS認証登録機能
+=======
+<% if session["devise.sns_id"] %>
+>>>>>>> parent of fbc5bc0... SNS認証登録機能
   <div class="field user__nickname">
     <div class="user__nickname__box">
     <div class="user__error__text"><%= f.label :password ,class:"user__position"%><span class="form__user__name">必須</span><br></div>
@@ -85,6 +95,7 @@
 
 
   
+
   </div>
   
 
@@ -92,6 +103,7 @@
   <div class="user-description"><span class="user__confirmation">本人確認</span><br>
 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。</div>
 <br>
+
 
 <div class="field user__nickname devise__add__input">
 <div class="user__nickname__box user__kananickname__box"><%= f.label :お名前（全角）,class:"user__position" %>
@@ -140,6 +152,7 @@
    
   </div>
 <% end %>
+
 
 
 

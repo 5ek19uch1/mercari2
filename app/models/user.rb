@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :skip_password_validation
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
@@ -34,6 +35,7 @@ class User < ApplicationRecord
             sns = snscredential
             # binding.pry
       
+
           else #sns登録 未
             user = User.where(email: auth.info.email).first
             if user.present? #会員登録 済
@@ -59,7 +61,14 @@ class User < ApplicationRecord
           # hashでsnsのidを返り値として保持しておく
           return { user: user , sns_id: sns.id }
         end
+<<<<<<< HEAD
+<<<<<<< HEAD
         
+        
+=======
+>>>>>>> parent of fbc5bc0... SNS認証登録機能
+=======
+>>>>>>> parent of fbc5bc0... SNS認証登録機能
 
         
 # 修正用に保存してます（上記のダミーemailについて）
