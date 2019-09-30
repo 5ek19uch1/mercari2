@@ -2,12 +2,10 @@ Rails.application.routes.draw do
 
   root 'mains#index'
   
+
   get 'card/new'
   get 'card/show'
   get 'users/edit'
-  root 'mains#index'
-
-
   get 'users/show'
   get 'users/index'
   get 'users/logout'
@@ -23,6 +21,7 @@ Rails.application.routes.draw do
   end
 
 
+
   # 中島エリア Don't touch!!＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   resources :card, only: [:new, :show] do
     collection do
@@ -33,10 +32,6 @@ Rails.application.routes.draw do
   end
   resources :addresses,only: [:new, :create]
   resources :phonenumbers,only: [:new, :create]
-   #devise周り
-  
-
-  
 
 
 #devise周り
@@ -56,6 +51,7 @@ Rails.application.routes.draw do
     post "signup/card" => "users/registrations#card"
     end
     
+    
     resources :users, only: [:index, :show, :destroy] do
       collection do
       get :logout
@@ -65,3 +61,5 @@ Rails.application.routes.draw do
     end
    end
   # 中島エリア Don't touch!!＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+  

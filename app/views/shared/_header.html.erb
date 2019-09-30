@@ -26,6 +26,7 @@
         <p class="header__center__bottom__Genre__brand__text">ブランドから探す</p>
       </a>
     </div>
+       <% if user_signed_in? %>
     <div class="header__center__bottom__right">
       <a href="" class="header__center__bottom__right__good">
         <div class="header__center__bottom__right__good__font">
@@ -45,20 +46,19 @@
         </div>
         <p class="header__center__bottom__right__list__text">やることリスト</p>
       </a>
-      <% if user_signed_in? %>
       <a href="/users/<%= current_user.id %>" class="header__center__bottom__right__my-page">
-      <div class="header__center__bottom__right__my-page__image">
+        <div class="header__center__bottom__right__my-page__image">
           <img src="https://mobilelaby.net/images/2016/09/super-mario-run-coming-to-android.jpg" id="user-img"/>
         </div>
         <p class="header__center__bottom__right__my-page__text">マイページ</p>
-        </a>
+      </a>
       <% else %>
       <a href="/users/sign_in/" class="header__center__bottom__right__my-page">
         <%= link_to "新規会員登録",emailpass_path, method: :get,style: "margin-right:20px;",class: "send-button-box btn-border" %>
  <%= link_to "ログイン", new_user_session_path,class:"sign-in-button-boxes" %>
-      </a>
+      <% end %>
     </div>
   </div>
-<% end %>
+
 </div>
 

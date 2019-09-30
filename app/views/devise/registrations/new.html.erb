@@ -32,12 +32,14 @@
 </div>
 
 
+
   
 
-<%= form_for(@user, url: registration_path(resource_name), mehod: :post) do |f| %>
+
+<%= form_for(resource, as: resource_name, url: "/users", method: :post) do |f| %>
+
 <%# 一旦残しておきます %>
   <%# <%= render "devise/shared/error_messages", resource: resource %> 
-
 
 <div class="signup__main__contents">
 <div class="field user__information user__push__button">
@@ -64,9 +66,7 @@
       <% end %>
   </div>
 
-
-
-<% if session["devise.sns_id"] %>
+<% unless session["devise.sns_id"].present? %>
   <div class="field user__nickname">
     <div class="user__nickname__box">
     <div class="user__error__text"><%= f.label :password ,class:"user__position"%><span class="form__user__name">必須</span><br></div>
@@ -75,6 +75,7 @@
         <li class="error__text__message error__text__message__english li-none"><%= message %></li>
       <% end %>
   </div>
+
   <div class="field user__nickname">
     <div class="user__nickname__box">
     <div class="user__error__text"><%= f.label :password_confirmation ,class:"user__position"%><span class="form__user__name">必須</span><br></div>
@@ -83,15 +84,17 @@
   <% end %>
   
 
-
-  
   </div>
-  
+  <% resource.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <li class="error__text__message error__text__conf__english li-none"><%= message %></li>
+      <% end %>
+      <br>
 
   <div class="actions user__nickname devise__add__input">
   <div class="user-description"><span class="user__confirmation">本人確認</span><br>
 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。</div>
 <br>
+
 
 <div class="field user__nickname devise__add__input">
 <div class="user__nickname__box user__kananickname__box"><%= f.label :お名前（全角）,class:"user__position" %>
@@ -144,6 +147,7 @@
 
 
 
+
 <div class="confirmation__next__choice">「次へ進む」のボタンを押すことにより、<a href="https://www.mercari.com/jp/tos_list/" class="promise__for__using">利用規約</a>に同意したものとみなします</div>
 
 <div>
@@ -151,4 +155,6 @@
 </div>
 <div class="mercari__user__secret__information">
 <%= link_to "" do %>本人情報の登録について</div><% end %>
+<%= render "devise/shared/links" %>
+<%= render 'devise/registrations/footer'%>
 </body>

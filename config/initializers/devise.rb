@@ -9,7 +9,8 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'b1c7e3c0d548431f45cfeb5e479bf1a0b8f0d9a8601d3e2fd1d762fe5febf8730291c30e4ed7eed749782d9ba7b7c448d5c5692939f93a79922d3b0ecdbc2873'
-  
+  config.omniauth :facebook, '380418436230184', 'bda2d13e3f262c590bd5a075b24cd673'
+  config.omniauth :google_oauth2,  '1034073333622-ao2ui4anlms5vvd9muihgkkv7vsnctpq.apps.googleusercontent.com', '-rh6pijxnhtfN7EXc7w3dvSF'
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -260,8 +261,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, '2372040092865447', '84fefaaea7fbee52273e00677a220cca'
-  config.omniauth :google_oauth2,  '1034073333622-ao2ui4anlms5vvd9muihgkkv7vsnctpq.apps.googleusercontent.com', '-rh6pijxnhtfN7EXc7w3dvSF'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
