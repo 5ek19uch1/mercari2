@@ -85,6 +85,9 @@ $(function(){
         $('.category-list__grandchild').removeClass("show1");
         $('.category-list__grandchild').children('.category-list__grandchild').hide();
       });
+      $('.category-list__parent').mouseover(function(){
+        $('.category-list__grandchild').removeClass("show1");
+      });
     })
   })
 });

@@ -1,0 +1,67 @@
+<%# ヘッダーをレンダーしてます %>
+<%= render partial: "shared/header" %>
+<%# 右下固定の出品ボタンです %>
+<% if user_signed_in?%>
+  <a href="/products/new" class="exhibit-btn fun-btn" >
+    <h2 class="exhibit-text">出品</h2>
+    <i class="fas fa-camera"></i>
+  </a>
+  
+<% else %>
+  <a href="/users/sign_in" class="exhibit-btn">
+    <h2 class="exhibit-text">出品</h2>
+    <i class="fas fa-camera"></i>
+  </a>
+<% end %>
+
+
+
+
+
+
+
+<div class="omake">
+
+  <div class="omake-category">
+    <div class="omake-category-title">カテゴリー一覧</div>
+    <div class="omake-category__top">
+
+      <% @category_parents.each do |category| %>
+        <div class="omake-category__top__list"><%= category.name %></div>
+      <%end%>
+
+    </div>
+
+    <div class="omake-category__ladys">
+      <div class="omake-category__ladys__header">レディース</div>
+      <div class="omake-category__ladys__body">
+
+        <a href="" class="omake-category__ladys__body__subete">すべて</a>
+        <div class="omake-category__ladys__body__midashi">子供タグ
+
+          <ul class="omake-category__ladys__body__midashi__ul">
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">すべて</a></li>
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">孫マゴ</a></li>
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">まごまご</a></li>
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">まごまごマゴ</a></li>
+          </ul>
+
+          <ul class="omake-category__ladys__body__midashi__ul">
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">孫マゴ</a></li>
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">まごまご</a></li>
+            <li class="omake-category__ladys__body__midashi__ul__li"><a href="/" class="midashi__li">まごまごマゴ</a></li>
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<footer>
+  <%= render partial: "shared/footer" %>
+</footer>

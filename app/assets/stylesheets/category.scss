@@ -1,0 +1,83 @@
+// Place all the styles related to the category controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.omake{
+  height: 100vh;
+  width: 100vw;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  // background-color: #0099e8;
+
+  &-category{
+    // background-color: aquamarine;
+    width: 700px;
+    margin: 0 auto;
+    &-title{
+      font-weight: 600;
+      font-size: 22px;
+    }
+    &__top{
+      display: flex;
+      &__list{
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        width: 100px;
+        font-weight: 100;
+        background-color: white;
+        padding: 0 30px;
+        font-size: 16px;
+        border: 1px solid #eee;
+        box-shadow: #ddd 1px 1px 0 0;
+        border-radius: 5px;
+        margin: 5px;
+      }
+      &__list:hover{
+        background-color: #ea352d;
+        color: white;
+
+      }
+    }
+    &__ladys{
+      width: 700px;
+      background-color: white;
+      border-radius: 4px;
+      margin-top: 30px;
+      margin-bottom: 100px;
+      &__header{
+        color: white;
+        background-color: #ea352d;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 7px 30px;
+        border-radius: 4px 4px 0 0;
+      }
+      &__body{
+        padding: 24px 30px;
+        &__subete{
+          color: #0099e8;
+          font-size:16px;
+        }
+        &__midashi{
+          padding: 15px 0 5px 0;
+          font-weight: 600;
+          display: flex;
+          &__ul{
+            width: 250px;
+            padding-left: 0;
+            &__li{
+              margin: 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.midashi__li{
+  color: #0099e8;
+  font-weight: 100;
+}

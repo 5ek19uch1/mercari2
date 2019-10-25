@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'category/index'
   devise_for :users,
   controllers: {
     registrations: 'users/registrations',
@@ -71,6 +72,8 @@ devise_scope :user do
   resources :addresses,only: [:new, :create]
 
   resources :phonenumbers,only: [:new, :create]
+
+  resources :category,only: [:index]
 
   #devise周り
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
